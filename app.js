@@ -27,3 +27,23 @@ function friendList() {
         list.appendChild(newFriend)
     }
 }
+
+function sortFriend() {
+    let sort = document.getElementById("resultado")
+    let winner = document.createElement("li")
+    let winnerSort = Math.floor(Math.random() * friendsArr.length) 
+    console.log(winnerSort)
+    
+    winner.textContent = friendsArr[winnerSort]
+    sort.appendChild(winner)
+}
+
+let add = document.getElementById("addFriend")
+let input = document.getElementById("amigo")
+
+input.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addFriend()
+    }
+});
